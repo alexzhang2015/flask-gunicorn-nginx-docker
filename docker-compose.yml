@@ -18,6 +18,8 @@ services:
       MONGODB_USERNAME: flaskuser
       MONGODB_PASSWORD: f19skp9ssw0rd
       MONGODB_HOSTNAME: mongodb
+    ports:
+      - "5000:5000"
     volumes:
       - appdata:/var/www
     depends_on:
@@ -51,7 +53,7 @@ services:
     build:
       context: nginx
       dockerfile: Dockerfile
-    image: boh/nginx:0.1
+    image: boh/nginx:0.3
     container_name: nginx
     restart: unless-stopped
     tty: true
